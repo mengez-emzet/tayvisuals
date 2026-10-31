@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="TayVisualss — Premium photography & videography. We visualize the stories you imagine." />
+  <title>Tayvisualss — Photography & Videography</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/logo.jpeg" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://www.gstatic.com/firebasejs/; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare https://fonts.gstatic.com data:; img-src 'self' data: blob: https://img.youtube.com https://images.unsplash.com; media-src 'self'; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/; connect-src 'self' https://formspree.io https://firestore.googleapis.com https://*.firebaseio.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none';">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta name="robots" content="noimageindex, noodp" />
+</head>
+<body>
+<!-- ════════════════════════════════════════════════
+     PAGE LOADER
+════════════════════════════════════════════════ -->
+<div id="page-loader">
+    <div class="loader-logo">Tayvisualss</div>
+    <div class="loader-bar-wrapper">
+      <div class="loader-bar">
+        <div class="loader-bar-progress"></div>
+      </div>
+      <div class="loader-percentage">
+        <span id="loader-percent">0</span>%
+      </div>
+    </div>
+  </div>
+
+<!-- ─── PAGE TRANSITION CURTAIN ────────────────────── -->
+<div class="page-transition"></div>
+
+<!-- ─── CUSTOM CURSOR ────────────────────────────────── -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- ─── MOBILE MENU OVERLAY ─────────────────────────── -->
+<div class="mobile-menu-overlay"></div>
+
+<!-- ─── MOBILE MENU ──────────────────────────────────── -->
+<nav class="mobile-menu">
+    <ul class="mobile-nav-links">
+      <li><a class="mobile-nav-link" href="index.html" data-page="home">Home</a></li>
+      <li><a class="mobile-nav-link" href="about.html" data-page="about">About</a></li>
+      <li><a class="mobile-nav-link" href="services.html" data-page="services">Services</a></li>
+      <li><a class="mobile-nav-link" href="projects.html" data-page="projects">Projects</a></li>
+      <li><a class="mobile-nav-link" href="contact.html" data-page="contact">Contact</a></li>
+    </ul>
+    <a class="mobile-nav-cta" href="book.html" data-page="book">Book A Shot</a>
+    <p class="mobile-menu-footer">© 2026 Tayvisualss</p>
+  </nav>
+
+<!-- ─── NAVBAR ───────────────────────────────────────── -->
+<header id="navbar">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#" data-page="home">
+        <!-- ─── PICTURE LOGO ────────────────────────────────── -->
+        <div class="nav-logo-wrapper">
+          <picture class="nav-logo-picture">
+            <!-- WebP format (modern browsers) -->
+            <source 
+              srcset="assets/logo.jpeg" 
+              type="image/webp"
+            >
+            <!-- PNG fallback -->
+            <source 
+              srcset="assets/logo.jpeg" 
+              type="image/png"
+            >
+            <!-- SVG fallback (if you want to keep it) -->
+            <img 
+              src="assets/logo.jpeg" 
+              alt="TayVisualss Logo" 
+              class="nav-logo-img"
+              width="40"
+              height="40"
+              loading="lazy"
+            >
+          </picture>
+        </div>
+        <span class="nav-name">Tayvisualss</span>
+      </a>
+  
+      <ul class="nav-links">
+        <li><a class="nav-link active" href="index.html" data-page="home">Home</a></li>
+        <li><a class="nav-link" href="about.html" data-page="about">About</a></li>
+        <li><a class="nav-link" href="services.html" data-page="services">Services</a></li>
+        <li><a class="nav-link" href="projects.html" data-page="projects">Projects</a></li>
+        <li><a class="nav-link" href="contact.html" data-page="contact">Contact</a></li>
+        <li><a class="nav-cta" href="book.html" data-page="book">Book A Shot</a></li>
+      </ul>
+  
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+<main>
+
+    <div class="book-hero">
+      <div class="book-hero-content">
+        <span class="section-label reveal from-left">Booking</span>
+        <h1 class="about-hero-title reveal from-bottom">
+          Let's make
+          <em>something real.</em>
+        </h1>
+      </div>
+    </div>
+  
+    <!-- ─── AVAILABILITY CALENDAR ──────────────────────── -->
+  <section class="cal-section" aria-label="Booking availability calendar">
+    <div class="cal-section-inner">
+
+      <div class="reveal from-left">
+        <span class="section-label">Availability</span>
+        <h2 class="section-title">Check our <em>schedule</em>.</h2>
+        <p class="section-desc">Browse available dates before you book. Click any date to see its status. Available dates auto-fill into the form below.</p>
+      </div>
+
+      <div class="cal-layout">
+
+        <!-- CALENDAR GRID -->
+        <div class="cal-card reveal from-left">
+          <div class="cal-header">
+            <span class="cal-month-label" id="tv-cal-month"></span>
+            <div class="cal-nav-btns">
+              <button class="cal-nav-btn" id="tv-prev" aria-label="Previous month">&#8592;</button>
+              <button class="cal-nav-btn" id="tv-next" aria-label="Next month">&#8594;</button>
+            </div>
+          </div>
+          <div class="cal-grid" id="tv-cal-grid">
+            <div class="cal-dow">Mon</div>
+            <div class="cal-dow">Tue</div>
+            <div class="cal-dow">Wed</div>
+            <div class="cal-dow">Thu</div>
+            <div class="cal-dow">Fri</div>
+            <div class="cal-dow">Sat</div>
+            <div class="cal-dow">Sun</div>
+          </div>
+          <div class="cal-legend">
+            <div class="cal-legend-item"><div class="cal-legend-swatch sw-available"></div>Available</div>
+            <div class="cal-legend-item"><div class="cal-legend-swatch sw-booked"></div>Booked</div>
+            <div class="cal-legend-item"><div class="cal-legend-swatch sw-unavail"></div>Unavailable</div>
+            <div class="cal-legend-item"><div class="cal-legend-swatch sw-selected"></div>Selected</div>
+          </div>
+        </div>
+
+        <!-- DETAIL PANEL -->
+        <div>
+          <div class="cal-detail" id="tv-cal-detail">
+            <div class="cal-detail-eyebrow">Selected date</div>
+            <div class="cal-detail-date" id="tv-detail-date"></div>
+            <div class="cal-status-row">
+              <div class="cal-status-dot" id="tv-status-dot"></div>
+              <div class="cal-status-text" id="tv-status-text"></div>
+            </div>
+            <p class="cal-detail-note" id="tv-detail-note"></p>
+            <a class="cal-detail-cta" id="tv-detail-cta" href="#booking-form" style="display:none">
+              Request This Date <span>&#8595;</span>
+            </a>
+          </div>
+          <p class="cal-detail-placeholder reveal from-right" id="tv-cal-placeholder">
+            Select a date on the calendar to see its availability details.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section" id="booking-form-section" style="padding-top:100px;padding-bottom:100px">
+      <div class="booking-form-wrapper">
+        <div class="booking-layout">
+  
+          <!-- FORM -->
+          <div class="reveal from-left">
+            <span class="section-label">Fill In Your Details</span>
+            <h2 class="section-title" style="margin-bottom:40px">Tell us about <em>your vision</em>.</h2>
+  
+            <form class="booking-form" id="booking-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input class="form-input" type="text" placeholder="Your first name" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input class="form-input" type="text" placeholder="Your last name" required />
+                </div>
+              </div>
+  
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input class="form-input" type="email" placeholder="hello@email.com" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone / WhatsApp</label>
+                  <input class="form-input" type="tel" placeholder="+263 77 000 0000" />
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label class="form-label">Service Required</label>
+                <select class="form-select form-input" required>
+                  <option value="">Select a service...</option>
+                  <option>Portrait Photography — Essential ($299+)</option>
+                  <option>Brand Photography — Signature ($699+)</option>
+                  <option>Full Production — Premiere ($1,499+)</option>
+                  <option>Music Video Production</option>
+                  <option>Wedding & Event Coverage</option>
+                  <option>Commercial / Product Shoot</option>
+                  <option>Creative Direction Package</option>
+                  <option>Custom Project</option>
+                </select>
+              </div>
+  
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Preferred Date</label>
+                  <input class="form-input" type="date" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Preferred Time</label>
+                  <select class="form-select form-input">
+                    <option value="">Select time...</option>
+                    <option>Early Morning (6–9 AM)</option>
+                    <option>Morning (9 AM–12 PM)</option>
+                    <option>Afternoon (12–4 PM)</option>
+                    <option>Golden Hour (4–7 PM)</option>
+                    <option>Evening / Night</option>
+                    <option>Flexible</option>
+                  </select>
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <label class="form-label">Location / Venue</label>
+                <input class="form-input" type="text" placeholder="Where would you like the shoot to take place?" />
+              </div>
+  
+              <div class="form-group">
+                <label class="form-label">Tell Us About Your Vision</label>
+                <textarea class="form-textarea" style="min-height:180px" placeholder="Describe your project, mood, references, number of people involved, or any creative ideas you have in mind..."></textarea>
+              </div>
+  
+              <div class="form-group">
+                <label class="form-label">How Did You Find Us?</label>
+                <select class="form-select form-input">
+                  <option value="">Select...</option>
+                  <option>Instagram</option>
+                  <option>Facebook</option>
+                  <option>Referral / Word of Mouth</option>
+                  <option>Google Search</option>
+                  <option>TikTok</option>
+                  <option>Other</option>
+                </select>
+              </div>
+  
+                            <!-- ─── HONEYPOT — hidden from humans, catches bots ── -->
+              <div class="hp-field" aria-hidden="true">
+                <input type="text" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+<button type="submit" class="form-submit" style="width:100%;margin-top:20px">
+                <span>Confirm Booking</span>
+                <span>→</span>
+              </button>
+              <div class="form-error"></div>
+              <div class="form-success">✓ Booking request received! We'll contact you within 24 hours to confirm your session.</div>
+            </form>
+          </div>
+  
+          <!-- SIDEBAR -->
+          <div class="booking-sidebar reveal from-right">
+            <div class="booking-info-card">
+              <h4>What Happens Next?</h4>
+              <p>Once you submit your booking request, here's what to expect from our team:</p>
+              <div class="booking-checklist">
+                <div class="booking-check-item">We review your request within 24 hours</div>
+                <div class="booking-check-item">You receive a custom quote (if applicable)</div>
+                <div class="booking-check-item">A discovery call is scheduled</div>
+                <div class="booking-check-item">Deposit confirms your date</div>
+                <div class="booking-check-item">Pre-shoot planning begins</div>
+              </div>
+            </div>
+            <div class="booking-info-card">
+              <h4>Good to Know</h4>
+              <div class="booking-checklist">
+                <div class="booking-check-item">30–50% deposit to secure your date</div>
+                <div class="booking-check-item">Flexible rescheduling with 48hr notice</div>
+                <div class="booking-check-item">All equipment & editing included</div>
+                <div class="booking-check-item">Travel available (fees may apply)</div>
+              </div>
+            </div>
+            <div class="booking-info-card" style="background:var(--pure-white);border:none">
+              <h4 style="color:var(--black)">Prefer to call?</h4>
+              <p style="color:#555">Reach us directly on WhatsApp for a quick conversation about your project.</p>
+              <a href="https://wa.me/263773920732" style="display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--black);border-bottom:1px solid rgba(0,0,0,0.2);padding-bottom:2px">
+                WhatsApp Us →
+              </a>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+  </main>
+
+
+<!-- ─── FOOTER ───────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-name">Tayvisualss</span>
+        <p>We turn light into legacy. Premium photography and videography for brands, creatives, and moments that matter.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/tayvisualss?igsh=bHJiNDJjOGJvYTNp" target="_blank" rel="noopener"title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@tayvisualss?_r=1&_t=ZS-97Zy0SLtEe8" target="_blank" rel="noopener"title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="http://www.youtube.com/@tayvisualss" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.facebook.com/tayoffficial
+          " target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://wa.me/263773920732" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+ 
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="index.html" data-page="home">Home</a>
+        <a href="about.html" data-page="about">About</a>
+        <a href="services.html" data-page="services">Services</a>
+        <a href="projects.html" data-page="projects">Projects</a>
+        <a href="contact.html" data-page="contact">Contact</a>
+      </div>
+ 
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services.html" data-page="services">Photography</a>
+        <a href="services.html" data-page="services">Videography</a>
+        <a href="services.html" data-page="services">Music Videos</a>
+        <a href="services.html" data-page="services">Weddings</a>
+        <a href="services.html" data-page="services">Commercial</a>
+      </div>
+ 
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a>info@tayvisualss.co.zw</a>
+        <a href="+263 77 392 0732">+263 77 392 0732</a>
+        <a>Gweru, Zimbabwe</a>
+        <a href="privacy.html" style="color:var(--silver)">Privacy Policy</a>
+        <a href="book.html" data-page="book" style="margin-top:16px;color:var(--white);font-weight:600">Book A Shot →</a>
+      </div>
+    </div>
+ 
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Tayvisualss. All rights reserved.</p>
+      <p class="footer-credit">
+        Visuals by <span class="footer-credit-brand">Tayvisualss</span>
+        <span class="footer-credit-divider">×</span>
+        Website Engineered by <a href="https://mengezemzet.co.zw" target="_blank" rel="noopener" class="footer-credit-link">Mengez Emzet</a>
+      </p>
+      <p class="footer-tagline">You imagine it, we visualize it.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script type="module">
+  /* ── FIREBASE CONFIG ────────────────────────────────── */
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+  
+  const FIREBASE_CONFIG = {
+    apiKey: "AIzaSyAjKF0Iy6okAFVG-nt04ZOJXHcW4nHWHjY",
+    authDomain: "tayvisualss-web.firebaseapp.com",
+    projectId: "tayvisualss-web",
+    storageBucket: "tayvisualss-web.firebasestorage.app",
+    messagingSenderId: "702560378882",
+    appId: "1:702560378882:web:8b022ae84ee2461d81871b"
+  };
+  
+  const app = initializeApp(FIREBASE_CONFIG);
+  const db = getFirestore(app);
+  
+  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  
+  const todayObj = new Date();
+  const todayYear = todayObj.getFullYear();
+  const todayMon = todayObj.getMonth();
+  const todayDay = todayObj.getDate();
+  
+  let viewYear = todayYear;
+  let viewMonth = todayMon;
+  let selectedCell = null;
+  let availability = {};
+  
+  function pad(n) { return String(n).padStart(2, '0'); }
+  
+  function dateKey(y, m, d) { return `${y}-${pad(m + 1)}-${pad(d)}`; }
+  
+  function getState(y, m, d) {
+    const key = dateKey(y, m, d);
+    const isPast = (y < todayYear) ||
+      (y === todayYear && m < todayMon) ||
+      (y === todayYear && m === todayMon && d < todayDay);
+    if (isPast) return 'past';
+    const entry = availability[key];
+    if (!entry) return 'available';
+    return entry.status;
+  }
+  
+  function renderCalendar() {
+    const grid = document.getElementById('tv-cal-grid');
+    const header = document.getElementById('tv-cal-month');
+    
+    if (!grid || !header) {
+      console.warn('Calendar elements not found');
+      return;
+    }
+  
+    // Update month/year header
+    header.textContent = `${MONTHS[viewMonth]} ${viewYear}`;
+  
+    // --- PRESERVE DAY-OF-WEEK HEADERS ---
+    // Get all existing day-of-week header text
+    const dowTexts = [];
+    const existingDows = grid.querySelectorAll('.cal-dow');
+    existingDows.forEach(el => dowTexts.push(el.textContent));
+  
+    // Clear grid
+    grid.innerHTML = '';
+  
+    // Re-add day-of-week headers
+    dowTexts.forEach(text => {
+      const dow = document.createElement('div');
+      dow.className = 'cal-dow';
+      dow.textContent = text;
+      grid.appendChild(dow);
+    });
+  
+    // --- CALCULATE FIRST DAY OF MONTH (Monday-based) ---
+    let startDow = new Date(viewYear, viewMonth, 1).getDay();
+    startDow = (startDow === 0) ? 6 : startDow - 1;
+  
+    // Add blank cells for days before the 1st
+    for (let i = 0; i < startDow; i++) {
+      const blank = document.createElement('div');
+      blank.className = 'cal-day empty';
+      grid.appendChild(blank);
+    }
+  
+    const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+    const todayKey = dateKey(todayYear, todayMon, todayDay);
+  
+    // --- RENDER EACH DAY ---
+    for (let d = 1; d <= daysInMonth; d++) {
+      const state = getState(viewYear, viewMonth, d);
+      const key = dateKey(viewYear, viewMonth, d);
+      const cell = document.createElement('div');
+      cell.className = `cal-day ${state}`;
+      
+      // Mark today
+      if (key === todayKey && state !== 'past') {
+        cell.classList.add('today');
+      }
+  
+      // Day number
+      const num = document.createElement('div');
+      num.className = 'cal-day-num';
+      num.textContent = d;
+      cell.appendChild(num);
+  
+      // Status dot (only for non-past dates)
+      if (state !== 'past') {
+        const dot = document.createElement('div');
+        dot.className = 'cal-day-dot';
+        cell.appendChild(dot);
+      }
+  
+      // Make available/booked dates clickable
+      if (state === 'available' || state === 'booked') {
+        cell.style.cursor = 'pointer';
+        cell.addEventListener('click', (e) => {
+          e.stopPropagation();
+          selectDate(cell, key, d, state);
+        });
+      }
+  
+      grid.appendChild(cell);
+    }
+  }
+  
+  function selectDate(cell, key, d, state) {
+    // Clear previous selection
+    if (selectedCell) {
+      selectedCell.classList.remove('selected');
+    }
+    selectedCell = cell;
+    cell.classList.add('selected');
+  
+    const detail = document.getElementById('tv-cal-detail');
+    const placeholder = document.getElementById('tv-cal-placeholder');
+    const dateEl = document.getElementById('tv-detail-date');
+    const dot = document.getElementById('tv-status-dot');
+    const statusEl = document.getElementById('tv-status-text');
+    const noteEl = document.getElementById('tv-detail-note');
+    const ctaEl = document.getElementById('tv-detail-cta');
+  
+    const dateObj = new Date(viewYear, viewMonth, d);
+    dateEl.textContent = dateObj.toLocaleDateString('en-GB', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+  
+    // Find the date input in the booking form
+    const dateInput = document.querySelector('#booking-form input[type="date"]');
+  
+    if (state === 'available') {
+      dot.className = 'cal-status-dot status-avail';
+      statusEl.textContent = 'Available for bookings';
+      noteEl.textContent = "This date is open. Click below to jump to the booking form.";
+      ctaEl.style.display = 'inline-flex';
+      if (dateInput) {
+        dateInput.value = key;
+      }
+      // Update CTA link to scroll to form
+      ctaEl.onclick = (e) => {
+        e.preventDefault();
+        document.getElementById('booking-form-section').scrollIntoView({ behavior: 'smooth' });
+      };
+    } else {
+      const label = availability[key]?.label || '';
+      dot.className = 'cal-status-dot status-booked';
+      statusEl.textContent = 'Already booked';
+      noteEl.textContent = label ?
+        `This date is fully booked for a ${label}. Please browse other dates or contact us.` :
+        'This date is fully booked. Please browse other available dates.';
+      ctaEl.style.display = 'none';
+    }
+  
+    if (detail) detail.classList.add('visible');
+    if (placeholder) placeholder.style.display = 'none';
+  }
+  
+  function clearSelection() {
+    if (selectedCell) {
+      selectedCell.classList.remove('selected');
+      selectedCell = null;
+    }
+    const detail = document.getElementById('tv-cal-detail');
+    const placeholder = document.getElementById('tv-cal-placeholder');
+    if (detail) detail.classList.remove('visible');
+    if (placeholder) placeholder.style.display = '';
+  }
+  
+  // --- NAVIGATION BUTTONS ---
+  document.getElementById('tv-prev').addEventListener('click', () => {
+    viewMonth--;
+    if (viewMonth < 0) {
+      viewMonth = 11;
+      viewYear--;
+    }
+    clearSelection();
+    renderCalendar();
+  });
+  
+  document.getElementById('tv-next').addEventListener('click', () => {
+    viewMonth++;
+    if (viewMonth > 11) {
+      viewMonth = 0;
+      viewYear++;
+    }
+    clearSelection();
+    renderCalendar();
+  });
+  
+  // --- FIRESTORE REAL-TIME LISTENER ---
+  let isFirstLoad = true;
+  
+  function startFirestoreListener() {
+    const header = document.getElementById('tv-cal-month');
+    if (header) header.textContent = 'Loading...';
+  
+    onSnapshot(collection(db, 'availability'), (snapshot) => {
+      availability = {};
+      snapshot.forEach(doc => {
+        availability[doc.id] = doc.data();
+      });
+      
+      // Render calendar with data
+      renderCalendar();
+      
+      // If this is the first load and we have data, hide loading state
+      if (isFirstLoad) {
+        isFirstLoad = false;
+        const placeholder = document.getElementById('tv-cal-placeholder');
+        if (placeholder) {
+          placeholder.textContent = 'Select a date on the calendar to see its availability details.';
+        }
+      }
+    }, (error) => {
+      console.error('Firestore error:', error);
+      const header = document.getElementById('tv-cal-month');
+      if (header) header.textContent = 'Could not load — refresh page';
+    });
+  }
+  
+  // --- INITIALIZE ---
+  // Wait for DOM to be ready before starting
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startFirestoreListener);
+  } else {
+    startFirestoreListener();
+  }
+  
+  // Also handle the CTA link in detail panel
+  document.addEventListener('DOMContentLoaded', () => {
+    const cta = document.getElementById('tv-detail-cta');
+    if (cta) {
+      cta.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('booking-form-section').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+  });
+  
+  </script>
+
+</body>
+</html>
